@@ -1,5 +1,7 @@
 package learn.leetcode;
 
 public class Solution1 {
-1
+	public static void main(String[] args) {
+		
+	}
 }
