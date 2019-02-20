@@ -15,10 +15,10 @@ import java.util.Map;
 public class Solution1 {
 
 	public static void main(String[] args) {
-		int[] nums = { 2, 7, 11, 15 };
+		int[] nums = { 2, 11, 15, 7 };
 		int target = 9;
 		long start = System.currentTimeMillis();
-		int[] result = twoSum1(nums, target);
+		int[] result = twoSum2(nums, target);
 		long end = System.currentTimeMillis();
 		System.out.println(end - start);
 		System.out.println(Arrays.toString(result)); // 使用Arrays.toString()把数组转化为字符串输出
@@ -54,8 +54,10 @@ public class Solution1 {
 		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 		// 一遍哈希
 		for (int i = 0; i < nums.length; i++) {
+			System.out.println(map.toString());
+			// i=3时， {2=0, 11=1, 15=2}
 			int x = target - nums[i];
-			if (map.containsKey(x)) {
+			if (map.containsKey(x)) {  //i=3时，nums[3] = 7  ,找到key为2的则返回[key的值, i]
 				return new int[] { map.get(x), i };
 			}
 			map.put(nums[i], i); // 重点，把值作为key，把i作为值存储，判断key是否跟差数相等
